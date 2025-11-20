@@ -1,5 +1,5 @@
 class PlatilloComedor:
-    def _init_(self, nombre, acompanamiento, temperatura, tipo, fecha_preparacion, precio):
+    def __init__(self, nombre, acompanamiento, temperatura, tipo, fecha_preparacion, precio):
         # Este es el método constructor, se ejecuta al crear un objeto de PlatilloComedor
         self.nombre = nombre                       # Guarda el nombre del platillo
         self.acompanamiento = acompanamiento       # Guarda el acompañamiento (arroz, frijoles, etc.)
@@ -31,7 +31,7 @@ class PlatilloComedor:
         print("¡Buen provecho!")
         self.temperatura = self.temperatura - 10
     
-    def _str_(self):                             # Método especial para representar el objeto como texto
+    def __str__(self):                             # Método especial para representar el objeto como texto
         descripcion = self.nombre + " con " + self.acompanamiento + " (" + self.tipo + ")" + ", preparado el " + self.fecha_preparacion  # La fecha de preparación
         return descripcion
     
@@ -41,7 +41,7 @@ platillo2 = PlatilloComedor("Sopa Azteca", "Queso con Crema", 10, "Sopa", "13/11
 print("\nHola Bienvenidos al desayuno de la Facultad de Psicología\nEste es el platillo del desayuno: ", platillo1)
 salir = 1
 contador_mordidas = 0
-while salir == 1 and contador_mordidas <= 4:
+while salir == 1 or contador_mordidas <= 4:
     print("Que quieres hacer?")
     print("1. Comer")
     print("2. Recalentar")
