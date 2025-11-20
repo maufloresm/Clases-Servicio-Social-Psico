@@ -11,7 +11,7 @@ class PlatilloComedor:
     def recalentar(self):                          # Método para revisar la temperatura
         if self.temperatura <= 0:                  # Si la temperatura es menor o igual a 0
             print("Hay que recalentar la comida. Tempratura actual: ", self.temperatura, "grados.")
-            self.temperatura + 50
+            self.temperatura += 50
             print("Tu plato ahora esta a", self.temperatura, "grados.")  # Regresa este mensaje
         elif self.temperatura >= 60:                 # Si la temperatura es mayor o igual a 60
             print("El platillo está muy caliente, ya no lo podemos calentar más. Tempratura actual: ", self.temperatura, "grados.")     # Regresa este mensaje
@@ -41,8 +41,13 @@ platillo2 = PlatilloComedor("Sopa Azteca", "Queso con Crema", 10, "Sopa", "13/11
 print("\nHola Bienvenidos al desayuno de la Facultad de Psicología\nEste es el platillo del desayuno: ", platillo1)
 salir = 1
 contador_mordidas = 0
+<<<<<<< HEAD
 while salir == 1 or contador_mordidas <= 4:
     print("Que quieres hacer?")
+=======
+while salir == 1 and contador_mordidas <= 4:
+    print("¿Que quieres hacer?")
+>>>>>>> 80a40692970b02e621ef4ab26a2c6392b2b0c79b
     print("1. Comer")
     print("2. Recalentar")
     print("3. Tocar")
@@ -57,7 +62,7 @@ while salir == 1 or contador_mordidas <= 4:
     elif opcion == 3:
         platillo1.tocar()
     elif opcion == 4:
-        salir == 0
+        salir = 0
     else:
         print("No existe esa opción")
     
