@@ -1,5 +1,5 @@
 class PlatilloComedor:
-    def _init_(self, nombre, acompanamiento, temperatura, tipo, fecha_preparacion, precio):
+    def __init__(self, nombre, acompanamiento, temperatura, tipo, fecha_preparacion, precio):
         # Este es el método constructor, se ejecuta al crear un objeto de PlatilloComedor
         self.nombre = nombre                       # Guarda el nombre del platillo
         self.acompanamiento = acompanamiento       # Guarda el acompañamiento (arroz, frijoles, etc.)
@@ -11,7 +11,7 @@ class PlatilloComedor:
     def recalentar(self):                          # Método para revisar la temperatura
         if self.temperatura <= 0:                  # Si la temperatura es menor o igual a 0
             print("Hay que recalentar la comida. Tempratura actual: ", self.temperatura, "grados.")
-            self.temperatura + 50
+            self.temperatura += 50
             print("Tu plato ahora esta a", self.temperatura, "grados.")  # Regresa este mensaje
         elif self.temperatura >= 60:                 # Si la temperatura es mayor o igual a 60
             print("El platillo está muy caliente, ya no lo podemos calentar más. Tempratura actual: ", self.temperatura, "grados.")     # Regresa este mensaje
@@ -31,7 +31,7 @@ class PlatilloComedor:
         print("¡Buen provecho!")
         self.temperatura = self.temperatura - 10
     
-    def _str_(self):                             # Método especial para representar el objeto como texto
+    def __str__(self):                             # Método especial para representar el objeto como texto
         descripcion = self.nombre + " con " + self.acompanamiento + " (" + self.tipo + ")" + ", preparado el " + self.fecha_preparacion  # La fecha de preparación
         return descripcion
     
@@ -42,7 +42,7 @@ print("\nHola Bienvenidos al desayuno de la Facultad de Psicología\nEste es el 
 salir = 1
 contador_mordidas = 0
 while salir == 1 and contador_mordidas <= 4:
-    print("Que quieres hacer?")
+    print("¿Que quieres hacer?")
     print("1. Comer")
     print("2. Recalentar")
     print("3. Tocar")
@@ -57,7 +57,7 @@ while salir == 1 and contador_mordidas <= 4:
     elif opcion == 3:
         platillo1.tocar()
     elif opcion == 4:
-        salir == 0
+        salir = 0
     else:
         print("No existe esa opción")
     
